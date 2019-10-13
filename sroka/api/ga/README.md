@@ -6,17 +6,14 @@
 
 #### Arguments
 
-
-* dict `input_dict` - obligatory
-* boolean `print_sample_size` - optional, will print the % of data used to calculate results. Default value is False.
-* string `sampling_level` - optional, specifies precision of your query. Available values are: 'DEFAULT', 'FASTER', 
-or 'HIGHER_PRECISION'. By default query is called with 'HIGHER_PRECISION'. 
-
-
+* dict `input_dict` - required, the dictionary that contains the request to run on the Google Analytics API
+* boolean `print_sample_size` - optional, will print the percentage of data that was used to calculate results. Default value is `False`.
+* string `sampling_level` - optional, specifies the precision of your query. Available values are: `DEFAULT`, `FASTER`, 
+or `HIGHER_PRECISION`. The default value is `HIGHER_PRECISION`. 
 
 #### Returns
 
-* pandas.DataFrame
+* A [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html) containing the query results.
 
 ## Example usage
 
@@ -34,5 +31,4 @@ request = {
 }
 
 df_ga = ga_request(request, print_sample_size=True, sampling_level='FASTER')
-
 ```
